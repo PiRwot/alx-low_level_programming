@@ -1,9 +1,8 @@
 #include<stdio.h>
 /**
- * main-Entry Point
- * return: 0 if successful
+*main-Entry Point
+*return: 0 if successful
 */
-
 int main(void) 
 {
 int intType;
