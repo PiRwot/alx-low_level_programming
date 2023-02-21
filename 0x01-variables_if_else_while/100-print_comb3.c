@@ -1,4 +1,4 @@
-#includr <stdio.h>
+#include <stdio.h>
 /**
 *main - Entry point, print 00 to 99 combinations using putchar only
 *Return: Always 0 (Success)
