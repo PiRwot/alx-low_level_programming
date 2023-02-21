@@ -3,33 +3,33 @@
 #include <time.h>
 
 /**
- *main - print all combinations of three different digits
- *Return: Always 0 (Success)
- */
+ * main - Entry point
+ *
+ * Return: Always 0
+*/
 
 int main(void)
 {
-	int one;
-	int ten;
-	int hundred;
+	int p, q;
 
-	for (hundred = '0'; hundred <= '9'; hundred++) /*hundreds place*/
+	for (p = 0; p <= 98; p++)
 	{
-		for (ten = (hundred + 1); ten <= '9'; ten++) /*tens=100s+1*/
+		for (q = p + 1; q <= 99; q++)
 		{
-			for (one = (ten + 1); one <= '9'; one++) /*ones*/
-			{
-				putchar(hundred);
-				putchar(ten);
-				putchar(one);
-				if (hundred != '7' || ten != '8' || one != '9')
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
+			putchar((p / 10) + '0');
+			putchar((p % 10) + '0');
+			putchar(' ');
+			putchar((q / 10) + '0');
+			putchar((q % 10) + '0');
+
+			if (p == 98 && q == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
+
 	putchar('\n');
 
 	return (0);
