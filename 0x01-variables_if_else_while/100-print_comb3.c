@@ -3,6 +3,7 @@
 *main - Entry point, print 00 to 99 combinations using putchar only
 *Return: Always 0 (Success)
 */
+
 int main(void)
 {
 	int tens;
@@ -13,7 +14,7 @@ int main(void)
 		{
 			putchar(tens);
 			putchar(ones);
-			if (!(tens == '9'&& ones =='9')) /*skip comma at end*/
+			if (!(tens == '9' && ones == '9')) /*skip comma at end*/
 			{
 				putchar(',');
 				putchar(' ');
