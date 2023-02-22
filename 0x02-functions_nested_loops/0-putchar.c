@@ -1,7 +1,13 @@
 #include "main.h"
+/**
+*main - print _putchar
+*
+*Return: Always (0)
+*/
+
 int main(void)
 {
-	char c[9] = "_putchar";
+	char c* = "_putchar";
 	int i;
 	for (i = 0; i < 9; i++) 
 	{
