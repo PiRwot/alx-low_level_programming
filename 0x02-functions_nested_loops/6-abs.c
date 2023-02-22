@@ -5,7 +5,6 @@
  * @n: integer argument
  * Return: absolute value
  */
-
 int _abs(int n)
 {
 	if (n > 0)
@@ -14,4 +13,4 @@ int _abs(int n)
 		return (-n);
 
 	return (0);
-o}
+}
