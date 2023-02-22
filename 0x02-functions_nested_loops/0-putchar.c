@@ -1,5 +1,4 @@
 #include "main.h"
-
 int main(void)
 {
 	char c[9] = "_putchar";
@@ -10,5 +9,4 @@ int main(void)
 	}
 	_putchar('\n');
 	return (0);
-	
 }
