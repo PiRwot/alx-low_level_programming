@@ -7,11 +7,19 @@
  *@n: integer
  *Return: return a pointer to the memory area s
  */
+
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int count;
 
-	for (count = 0; count < n; count++)
-		s[count] = b;
+	int size = n; /* only accept positive sizes */
+
+	if (size > 0)
+	{
+		int i;
+
+		for (i = 0; i < size; i++)
+			s[i] = b;
+	}
+
 	return (s);
 }
