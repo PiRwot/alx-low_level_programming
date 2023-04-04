@@ -9,15 +9,19 @@
 
 int pop_listint(listint_t **head)
 {
-	listint_t *new_node;
-	int n;
+	int data;
+	listint_t *tmp;
 
-	if(*head == NULL)
+	if (*head == NULL) /* account for no linked list */
 		return (0);
 
-	n = (*head)->n;
-	new_node = (*head)->next;
-	free(*head);
-	*head = new_node;
-	return (n);
+	tmp = *head;
+
+	data = tmp->n; /* save data to return later */
+
+	*head = tmp->next; /* link head to next node */
+	free(tmp);
+
+	return (data);
+
 }
