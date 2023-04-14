@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <elf.h>
 
 /* close */
 #include <unistd.h>
@@ -20,4 +21,7 @@ int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 int _putchar(char c);
 int _strlen(char *str);
+void get_type(Elf64_Ehdr *ehdr);
+int main(int argc, char *argv[]);
+
 #endif
