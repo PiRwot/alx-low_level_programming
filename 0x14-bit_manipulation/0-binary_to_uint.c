@@ -7,27 +7,29 @@
 */
 unsigned int binary_to_uint(const char *b)
 {
-	int len = 0, pow = 1;
-	unsigned int sum = 0, error = 0;
+	unsigned int uint, convert;
+	int len;
 
-	if (b == NULL)
-		return (error);
+	if (!b)
+		return (0);
 
-	while (b[len] != '\0') // This finds string length
-		len++;
-	len -= 1;
-
-	while (len >= 0)
+	for (len = 0; b[len]; len ++)
+		;
+	len--;
+	for (convert = 1, uint = 0; len >= 0; len--)
 	{
-		if ((b[len] != ')') && (b[len] != '1'))
-			return (error);
-
-		if (b[len] == '1')
-			sum += pow;
-
-		pow *= 2;
-		len--;
+		if (b[len] == '0')
+		{
+			convert *= 2;
+			continue;
+		}
+		else if (b[len] == '1')
+		{
+			uint += convert;
+			convert *= 2;
+			continue;
+		}
+		return (0);
 	}
-
-	return (sum);
+	return (uint);
 }
