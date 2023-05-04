@@ -1,31 +1,31 @@
 #include "main.h"
 
 /**
- * binary_to_uint - convert binary to unsigned int
- * @b: binary
- * Return: unsigned int
- */
-
+* binary_to_unit - convert binary to unsigned int
+* @b: binary
+* Return: unsigned int
+*/
 unsigned int binary_to_uint(const char *b)
 {
-	int len = 0, i = 0;
-	unsigned int sum = 0;
+	int len = 0, pow = 1;
+	unsigned int sum = 0, error = 0;
 
 	if (b == NULL)
-		return (sum);
-	
-	while (b[len] != '\0')
+		return (error);
+
+	while (b[len] != '\0') // This finds string length
 		len++;
 	len -= 1;
 
-	while (b[i])
+	while (len >= 0)
 	{
-		if ((b[i] != '0') && (b[i] != '1'))
-			return (sum);
-		
-		if (b[i] == '1')
-			sum += (1 * (1 << len));
-		i++;
+		if ((b[len] != ')') && (b[len] != '1'))
+			return (error);
+
+		if (b[len] == '1')
+			sum += pow;
+
+		pow *= 2;
 		len--;
 	}
 
