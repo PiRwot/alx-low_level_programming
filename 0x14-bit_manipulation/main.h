@@ -1,11 +1,12 @@
 #ifndef HEADER_H
 #define HEADER_H
 
-#include <stdlib.h> // This should deal with NULL //
+#include <stdlib.h>
 
-int _putchar(char c); // This is a helper function //
+/* Helper Function */
+int _putchar(char c);
 
-// Prototypes //
+/* Prototypes */
 unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int n);
 int get_bit(unsigned long int n, unsigned int index);
