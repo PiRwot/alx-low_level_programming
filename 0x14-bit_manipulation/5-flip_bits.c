@@ -9,13 +9,19 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int counter = 0, checker;
-	
-	checker = (n ^ m);
-	while (checker)
-	{
-		counter += (checker & 1);
-		checker >>= 1;
-	}
-	return (counter);
+	unsigned int diff_bits = 0;
+	unsigned long int difference;
+
+	/* Xor both nums to show bit 1 if different bits */
+	difference = n ^ m;
+
+	/* keep shifting difference to right and tallying the ones up */
+	do {
+		diff_bits += (difference & 1);
+		difference >>= 1;
+	} while
+		(difference > 0);
+
+	return (diff_bits);
+
 }
